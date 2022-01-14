@@ -1,7 +1,11 @@
 const CFont = require("cfonts")
 const clear = require("clear")
+import { exec } from "shelljs";
 
 import readlineSync from "readline-sync";
+
+
+import { compile } from "./businessLogic"
 
 
 const enum Commands {
@@ -26,12 +30,13 @@ const back = () => {
 
 const cmdStart = async () => {
     console.log('Start called.');
-
+    compile()
+    
     loadCli();
 }
 
-const cmdStop = async () => {
-    console.log('Stop is called.');
+const cmdStop = async (name: string) => {
+    console.log(`Stop is called. ${name}`);
 
     loadCli();
 }
@@ -42,7 +47,7 @@ export const cli = async () => {
 
     CFont.say(`Hero-CLI`, {
         align: "center",
-        font: "block",
+        font: "huge",
         colors:["yellow", "#f80"]
     })
 
@@ -64,7 +69,12 @@ export const cli = async () => {
                 cmdStart();
                 break;
             case Commands.stop:
-                cmdStop();
+                let name = readlineSync.question("Please give your name:")
+                if(name.length == 0) {
+                    console.log("No input provided")
+                    cli()
+                }
+                cmdStop(name);
                 break;
             default:
                 cli()
