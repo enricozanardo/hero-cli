@@ -4,7 +4,7 @@
   "description": "This application allow users to manage their own node on the p2p network.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "ts-node ./src/main.ts"
   },
   "repository": {
     "type": "git",
@@ -16,5 +16,18 @@
   "bugs": {
     "url": "https://github.com/onezerobinary/hero-cli/issues"
   },
-  "homepage": "https://github.com/onezerobinary/hero-cli#readme"
+  "homepage": "https://github.com/onezerobinary/hero-cli#readme",
+  "dependencies": {
+    "cfonts": "^2.10.0",
+    "clear": "^0.1.0",
+    "readline-sync": "^1.4.10",
+    "save": "^2.4.0",
+    "shelljs": "^0.8.5",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.4"
+  },
+  "devDependencies": {
+    "@types/readline-sync": "^1.4.4",
+    "@types/shelljs": "^0.8.11"
+  }
 }
