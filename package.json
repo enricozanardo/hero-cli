@@ -1,0 +1,20 @@
+{
+  "name": "hero-cli",
+  "version": "1.0.0",
+  "description": "This application allow users to manage their own node on the p2p network.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/onezerobinary/hero-cli.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/onezerobinary/hero-cli/issues"
+  },
+  "homepage": "https://github.com/onezerobinary/hero-cli#readme"
+}
