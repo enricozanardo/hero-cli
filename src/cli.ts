@@ -10,7 +10,8 @@ import { compile } from "./businessLogic"
 
 const enum Commands {
     start = "Start the application... ",
-    stop = "Stopping the application.."
+    stop = "Stopping the application..",
+    close = "Close Application"
 }
 
 
@@ -31,7 +32,7 @@ const back = () => {
 const cmdStart = async () => {
     console.log('Start called.');
     compile()
-    
+
     loadCli();
 }
 
@@ -45,9 +46,9 @@ export const cli = async () => {
     
     clear()
 
-    CFont.say(`Hero-CLI`, {
+    CFont.say(`Hero`, {
         align: "center",
-        font: "huge",
+        font: "block",
         colors:["yellow", "#f80"]
     })
 
@@ -60,7 +61,8 @@ export const cli = async () => {
     var menu = require("readline-sync"), 
         commands = [ 
             Commands.start,
-            Commands.stop 
+            Commands.stop,
+            Commands.close 
         ],
         index = menu.keyInSelect(commands, "Commands")
 
@@ -75,6 +77,9 @@ export const cli = async () => {
                     cli()
                 }
                 cmdStop(name);
+                break;
+            case Commands.close:
+                process.exit()
                 break;
             default:
                 cli()
